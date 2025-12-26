@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>量化志 - Hanz</title><link rel="manifest" href="/homepage-main-deploy/manifest.json"><meta name="application-name" content="Hanz"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hanz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Day 1"><meta property="og:type" content="article"><meta property="og:title" content="量化志"><meta property="og:url" content="https://hashadow.github.io/2025/11/12/quant_day_1/"><meta property="og:site_name" content="Hanz"><meta property="og:description" content="Day 1"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hashadow.github.io/2025/11/12/quant_day_1/quant_day_1/image-20251114154319929.png"><meta property="article:published_time" content="2025-11-12T16:00:00.000Z"><meta property="article:modified_time" content="2025-12-26T08:10:23.042Z"><meta property="article:author" content="Hanz Shadow"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://hashadow.github.io/2025/11/12/quant_day_1/quant_day_1/image-20251114154319929.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hashadow.github.io/2025/11/12/quant_day_1/"},"headline":"量化志","image":["https://hashadow.github.io/2025/11/12/quant_day_1/quant_day_1/image-20251114154319929.png"],"datePublished":"2025-11-12T16:00:00.000Z","dateModified":"2025-12-26T08:10:23.042Z","author":{"@type":"Person","name":"Hanz Shadow"},"publisher":{"@type":"Organization","name":"Hanz","logo":{"@type":"ImageObject","url":{"text":"Hanz"}}},"description":"Day 1"}</script><link rel="canonical" href="https://hashadow.github.io/2025/11/12/quant_day_1/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/homepage-main-deploy/css/default.css"><!--!--><script>
+                 window.MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                    },
+                    svg: { fontCache: 'global' }
+                };
+                </script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/homepage-main-deploy/">Hanz</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/homepage-main-deploy/">Home</a><a class="navbar-item" href="/homepage-main-deploy/wiki/">知识库</a><a class="navbar-item" href="/homepage-main-deploy/wiki/physics/">物理</a><a class="navbar-item" href="/homepage-main-deploy/wiki/cs/">计算机</a><a class="navbar-item" href="/homepage-main-deploy/teaching">教学</a><a class="navbar-item" href="/homepage-main-deploy/plan">计划</a><a class="navbar-item" href="/homepage-main-deploy/shopping">购物</a><a class="navbar-item" href="/homepage-main-deploy/about">关于</a></div><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-11-12T16:00:00.000Z" title="11/12/2025, 4:00:00 PM">2025-11-13</time>发表</span><span class="level-item"><time dateTime="2025-12-26T08:10:23.042Z" title="12/26/2025, 8:10:23 AM">2025-12-26</time>更新</span><span class="level-item">44 分钟读完 (大约6565个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">量化志</h1><div class="content"><h1>🌟 Hanz · Day 1 轻度任务</h1>
+<h3 id="🔵-任务-A：金融微任务（轻度）">🔵 <strong>任务 A：金融微任务（轻度）</strong></h3>
+<p><strong>主题：折现（Discounting）到底是什么？</strong></p>
+<p><strong>步骤：</strong></p>
+<ol>
+<li>阅读这句话（核心精华）：<br>
+👉 <strong>折现 = 把未来的钱换算成今天等价的价值。</strong></li>
+<li>用你自己的话回答这两个问题（随便写，不要求正确）：<br>
+<strong>（1）为什么未来的 100 元不等于今天的 100 元？</strong><br>
+<strong>（2）你觉得折现的“直觉意义”是什么？</strong></li>
+</ol>
+<p>我会根据你的回答告诉你：</p>
+<ul>
+<li>你的理解哪里非常到位</li>
+<li>哪些地方需要补充</li>
+<li>给你一个“专业但很好懂”的折现实例</li>
+</ul>
+<hr>
+<h3 id="🟢-任务-B：Python-微任务（轻度）">🟢 <strong>任务 B：Python 微任务（轻度）</strong></h3>
+<p><strong>主题：读取一只股票的数据并打印前五行</strong></p>
+<p>你运行下面这段代码（直接复制即可）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> akshare <span class="keyword">as</span> ak</span><br><span class="line"></span><br><span class="line">df = ak.stock_zh_a_hist(symbol=<span class="string">&quot;000001&quot;</span>, start_date=<span class="string">&quot;20240101&quot;</span>, end_date=<span class="string">&quot;20241231&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.head())</span><br></pre></td></tr></table></figure>
+<p><strong>你要做的：</strong></p>
+<ul>
+<li>运行代码</li>
+<li>截图或复制输出</li>
+<li>告诉我有没有成功</li>
+<li>如果报错，也发给我，我帮你解决</li>
+</ul>
+<p>我会告诉你：</p>
+<ul>
+<li>代码有没有问题</li>
+<li>输出的每一列是什么意思</li>
+<li>这个数据未来怎么用在量化里</li>
+</ul>
+<hr>
+<h3 id="🟣-任务-C：量化微任务（轻度）">🟣 <strong>任务 C：量化微任务（轻度）</strong></h3>
+<p><strong>主题：画出 000001 的收盘价折线图</strong></p>
+<p>在任务 B 的基础上再运行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;收盘&#x27;</span>].plot(figsize=(<span class="number">10</span>, <span class="number">4</span>))</span><br><span class="line">plt.title(<span class="string">&quot;000001 收盘价&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><strong>你要做的：</strong></p>
+<ul>
+<li>发图给我（截图即可）</li>
+<li>告诉我图的形状是什么样子（上升？下降？震荡？）</li>
+</ul>
+<p>我会帮你分析：</p>
+<ul>
+<li>图里有什么信息</li>
+<li>收盘价曲线如何帮助我们做策略</li>
+<li>下一步可以做什么（均线、动量）</li>
+</ul>
+<hr>
+<h1>🔵 任务 A：折现（Discounting）</h1>
+<h3 id="概念">概念</h3>
+<p>折现的核心功能：</p>
+<ul>
+<li>把未来的金额换算成今天的等价值，形成可比较的标准。</li>
+</ul>
+<p>未来的钱价值更低，因为包含三种因素：</p>
+<ol>
+<li>通胀（Purchasing Power）：未来购买力下降</li>
+<li>风险溢价（Risk Premium）：未来不确定，需要补偿风险</li>
+<li>机会成本（Opportunity Cost）：今天的钱可以用于其他可能赚钱的用途</li>
+</ol>
+<p>折现的本质：</p>
+<ul>
+<li>统一不同时间点的价值尺度</li>
+<li>让投资、估值、收益比较变得可行</li>
+</ul>
+<p>折现的主要应用：</p>
+<ul>
+<li>公司估值（DCF）</li>
+<li>债券定价</li>
+<li>项目评估（NPV/IRR）</li>
+<li>股票估值（DDM）</li>
+<li>量化策略收益评估</li>
+</ul>
+<p>折现就是把未来的钱拉回当下，同时考虑通胀、风险和机会成本。如果折现后的价值比今天花出去的钱大，那就是赚的。</p>
+<p><strong>折现是将未来现金流在通胀、风险溢价和机会成本等因素的影响下，换算成当期价值的过程。若折现后的总现值大于当前投资成本，则净现值（NPV）为正，投资能够创造额外收益。</strong></p>
+<h3 id="应用">应用</h3>
+<p>五个关键金融场景：</p>
+<p><strong>① 项目投资 – 判断是否值得做（NPV）</strong></p>
+<p>一个项目会在未来 10 年产出现金。折现把未来的现金流拉回“今天的价值”，如果大于成本 → 值得投资。</p>
+<p><strong>② 公司估值（DCF 公司估值模型）</strong></p>
+<p>所有上市公司估值几乎都靠折现法（DCF）。一个公司未来 10 年赚多少钱 → 折现 → 得出它今天的价值。做股票时会用到。</p>
+<p>③ <strong>债券定价（Bond Pricing）</strong></p>
+<p>未来的每期利息也要折现。折现后的价值和当前市场价比对，判断贵还是便宜。</p>
+<p>④ <strong>股票估值（股息折现模型 DDM）</strong></p>
+<p>未来股息 → 折现 → 当前价值。</p>
+<p>⑤ <strong>量化策略 – 计算收益的真实价值</strong></p>
+<p>比如策略回测中的：</p>
+<ul>
+<li>年化收益率</li>
+<li>夏普比率</li>
+<li>真实收益</li>
+</ul>
+<p>都要经过折现逻辑来理解“时间价值”。</p>
+<h3 id="计算">计算</h3>
+<p>🌟 一、折现“使用哪一个比率”？——三大主流标准（实际应用）</p>
+<p>折现率通常来自三类“市场上实际存在的回报率”。你理解它们，你就能在实际项目、股票估值、量化回测中套用。</p>
+<hr>
+<p><strong>① 无风险利率（Risk-Free Rate）</strong></p>
+<p>适用场景：</p>
+<ul>
+<li>国债定价</li>
+<li>折现未来的“确定收益”（如银行存款）</li>
+<li>做基准比较（CAPM 的基础）</li>
+</ul>
+<p>一般取值：</p>
+<ul>
+<li>中国：10 年期国债收益率</li>
+<li>美国：10 年期 Treasury Yield</li>
+</ul>
+<p>例如（假设）： <strong>3% / 年</strong></p>
+<p>作用：只是把<strong>时间价值和通胀</strong>考虑进去。</p>
+<hr>
+<p><strong>② 公司折现率（WACC）</strong></p>
+<p>适用场景：</p>
+<ul>
+<li>公司估值（DCF 模型）</li>
+<li>项目投资决策（NPV）</li>
+<li>并购、融资评估</li>
+</ul>
+<p>WACC 包含：</p>
+<ul>
+<li>借钱的成本（债务成本）</li>
+<li>融资成本（股权成本）</li>
+<li>权重（资产结构）</li>
+</ul>
+<p>一般企业 WACC 可能是：<strong>8% ~ 15% / 年</strong></p>
+<p>折现率越高 → 未来越不值钱 → 项目越难通过<br>
+折现率越低 → 更容易通过项目</p>
+<hr>
+<p><strong>③ CAPM 模型算出来的“股权成本”</strong>（最常用于股票）</p>
+<p>CAPM：<strong>股权成本 = 无风险利率 + β ×（市场风险溢价）</strong></p>
+<p>例子：</p>
+<ul>
+<li>无风险利率 = 3%</li>
+<li>β = 1.2</li>
+<li>市场风险溢价 = 6%</li>
+</ul>
+<p>股权成本 = 3% + 1.2 × 6% = <strong>3% + 7.2%= 10.2%</strong></p>
+<p>适用场景：</p>
+<ul>
+<li>折现股票未来的现金流</li>
+<li>做股票估值</li>
+<li>做项目的股东回报要求</li>
+</ul>
+<hr>
+<p>🌟 二、那折现“如何带入数据”？——给你三个最常用公式</p>
+<p>折现的核心公式：</p>
+<hr>
+<p><strong>① 单笔未来现金折现</strong></p>
+<p>未来一年后得到 FV：<br>
+$$<br>
+PV = \frac{FV}{(1+r)}<br>
+$$<br>
+三年后：<br>
+$$<br>
+PV = \frac{FV}{(1+r)^3}<br>
+$$</p>
+<hr>
+<p><strong>② 多期现金流折现（DCF）</strong></p>
+<p>$$<br>
+PV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}<br>
+$$</p>
+<p>这是股票估值和项目投资最核心的公式。</p>
+<hr>
+<p><strong>③ 净现值（NPV）</strong></p>
+<p>$$<br>
+NPV = PV - 投资成本<br>
+$$</p>
+<p>NPV &gt; 0：赚</p>
+<p>NPV &lt; 0：亏</p>
+<hr>
+<p>🌟 三、最关键：给你一个“真实、完整、专业的例子”</p>
+<p><strong>“如何把数据带入？”</strong></p>
+<p>我给你一个企业项目投资的真实例子，让你一眼看懂折现怎么实际计算。</p>
+<hr>
+<p>📘 <strong>例子：一个项目未来三年每年盈利多少？值不值得投？</strong></p>
+<p>假设某项目需要你投资<strong>成本 = 100 万元</strong></p>
+<p>未来的预期现金流：</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>现金流 CF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第1年</td>
+<td>50 万</td>
+</tr>
+<tr>
+<td>第2年</td>
+<td>60 万</td>
+</tr>
+<tr>
+<td>第3年</td>
+<td>70 万</td>
+</tr>
+</tbody>
+</table>
+<p>假设该行业平均 WACC = <strong>10%</strong></p>
+<p>我们要算： <strong>这个项目的价值（折现后的价值）是多少？是不是大于 100 万？</strong></p>
+<hr>
+<p>📌 第一步：逐年折现</p>
+<p><strong>第 1 年折现</strong></p>
+<p>$$<br>
+PV_1 = \frac{50}{1.10} = 45.45<br>
+$$</p>
+<p><strong>第 2 年折现</strong></p>
+<p>$$<br>
+PV_2 = \frac{60}{1.10^2} = 49.59<br>
+$$</p>
+<p><strong>第 3 年折现</strong></p>
+<p>$$<br>
+PV_3 = \frac{70}{1.10^3} = 52.57<br>
+$$</p>
+<hr>
+<p>📌 第二步：把现值加起来</p>
+<p>$$<br>
+PV_{\text{total}} = 45.45 + 49.59 + 52.57<br>
+= 147.61\text{万}<br>
+$$</p>
+<hr>
+<p>📌 第三步：算 NPV</p>
+<p>$$<br>
+NPV = 147.61 - 100<br>
+= 47.61\text{万}<br>
+$$</p>
+<p>✨ <strong>结论：这个项目值得做，因为折现后仍然能额外创造 47.61 万价值。</strong></p>
+<p>这就是折现在真实场景中的使用方式。</p>
+<hr>
+<p>🌟 四、给你一个“股票 DCF 估值”的真实例子（更贴近你未来的量化方向）</p>
+<p>假设：<br>
+某公司未来五年能创造如下自由现金流：</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th>FCF（亿）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>14</td>
+</tr>
+<tr>
+<td>4</td>
+<td>15</td>
+</tr>
+<tr>
+<td>5</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<p>折现率（股权成本）= <strong>10%</strong>（由 CAPM 得来）</p>
+<p>你只需把五年现金流分别折现，再加总。</p>
+<p>第五年之后的成长用永续模型算，这就是专业的 DCF 模型。</p>
+<p>（你之后学到量化估值的时候会非常常用。）</p>
+<hr>
+<p>🌟 五、给你一个“量化回测中的折现应用”例子（你未来会经常用）</p>
+<p>当你算策略的真实收益，就要考虑：</p>
+<p>$$<br>
+\text{真实收益} = \frac{未来的价值}{(1+r)^t}<br>
+$$</p>
+<p>例如：</p>
+<ul>
+<li>你的策略收益 20%</li>
+<li>但无风险利率 3%</li>
+<li>风险溢价 5%</li>
+</ul>
+<p>你需要对超额收益做折现，得到真正的“风险调整后收益”。</p>
+<hr>
+<p>🌈 六、我把你的问题总结成 Markdown（你可以直接存入知识库）</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 折现率的选择与折现计算示例</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 1. 折现率来源</span></span><br><span class="line"><span class="section">### 1.1 无风险利率（Risk-Free Rate）</span></span><br><span class="line"><span class="bullet">-</span> 通常选择10年期国债收益率</span><br><span class="line"></span><br><span class="line"><span class="section">### 1.2 WACC（加权平均资本成本）</span></span><br><span class="line"><span class="bullet">-</span> 用于公司估值、项目投资</span><br><span class="line"></span><br><span class="line"><span class="section">### 1.3 CAPM（股权成本）</span></span><br><span class="line"><span class="bullet">-</span> r = Rf + β × MRP</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="section">## 2. 单期与多期折现公式</span></span><br><span class="line">PV = FV / (1+r)^t</span><br><span class="line"></span><br><span class="line">NPV = Σ CF<span class="emphasis">_t / (1+r)^t − 初始投资</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">---</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">## 3. 实际例子：项目投资折现</span></span><br><span class="line"><span class="emphasis">投资成本：100 万  </span></span><br><span class="line"><span class="emphasis">折现率：10%</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">未来现金流：</span></span><br><span class="line"><span class="emphasis">1年：50 万  </span></span><br><span class="line"><span class="emphasis">2年：60 万  </span></span><br><span class="line"><span class="emphasis">3年：70 万  </span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">折现：</span></span><br><span class="line"><span class="emphasis">- 50 / 1.1 = 45.45</span></span><br><span class="line"><span class="emphasis">- 60 / 1.1^2 = 49.59</span></span><br><span class="line"><span class="emphasis">- 70 / 1.1^3 = 52.57</span></span><br><span class="line"><span class="emphasis"></span></span><br><span class="line"><span class="emphasis">总现值 = 147.61 万  </span></span><br><span class="line"><span class="emphasis">NPV = 147.61 − 100 = 47.61 万 → 项目值得做。</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>🌟 七、下一步可以选择：</p>
+<ol>
+<li><strong>用 Python 写出折现计算（DCF 代码）</strong></li>
+<li><strong>继续扩展折现率选择（WACC, CAPM 完整推导）</strong></li>
+<li><strong>学习 NPV/IRR 的进一步应用</strong></li>
+<li><strong>进入“量化算法中的折现”</strong></li>
+</ol>
+<h1>🟢 任务 B：运行代码结果</h1>
+<p>输出如下（摘取关键部分）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">           日期    股票代码    开盘    收盘    最高    最低      成交量           成交额    振幅  </span><br><span class="line">0  2024-01-02  000001  9.39  9.21  9.42  9.21  1158366  1.075742e+09  2.24   </span><br><span class="line">1  2024-01-03  000001  9.19  9.20  9.22  9.15   733610  6.736736e+08  0.76   </span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<ul>
+<li>akshare 成功安装 ✔</li>
+<li>API 正常工作 ✔</li>
+<li>数据成功获取 ✔</li>
+<li>DataFrame 输出格式正确 ✔</li>
+</ul>
+<p>Python 环境已能流畅运行财经数据。</p>
+<h3 id="✅-二、这些列分别是什么意思？（量化必备）">✅ <strong>二、这些列分别是什么意思？（量化必备）</strong></h3>
+<p>直观专业解释：</p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>意义</th>
+<th>在量化中的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>日期</strong></td>
+<td>交易日日期</td>
+<td>用作索引、回测日期对齐</td>
+</tr>
+<tr>
+<td><strong>股票代码</strong></td>
+<td>例如 000001</td>
+<td>多股票回测时用来区分</td>
+</tr>
+<tr>
+<td><strong>开盘</strong></td>
+<td>当天开盘价</td>
+<td>做<strong>T+1回测</strong>时，用作“执行买卖价”</td>
+</tr>
+<tr>
+<td><strong>收盘</strong></td>
+<td>当天收盘价</td>
+<td>最常用的数据：计算收益、指标、K线</td>
+</tr>
+<tr>
+<td><strong>最高</strong></td>
+<td>当天最高价</td>
+<td>用于极值、风险监控（如振幅）</td>
+</tr>
+<tr>
+<td><strong>最低</strong></td>
+<td>当天最低价</td>
+<td>同上，用来判断波动、止损策略</td>
+</tr>
+<tr>
+<td><strong>成交量</strong></td>
+<td>当天成交量（手）</td>
+<td>做量价策略（如均量、反转）</td>
+</tr>
+<tr>
+<td><strong>成交额</strong></td>
+<td>当天成交金额（元）</td>
+<td>大单流入/机构行为分析</td>
+</tr>
+<tr>
+<td><strong>振幅</strong></td>
+<td>(最高-最低)/前收盘 ×100%</td>
+<td>波动率指标之一</td>
+</tr>
+<tr>
+<td><strong>涨跌幅</strong></td>
+<td>(收盘-前收盘)/前收盘 ×100%</td>
+<td>核心收益率，用于策略收益计算</td>
+</tr>
+<tr>
+<td><strong>涨跌额</strong></td>
+<td>当日涨跌的金额</td>
+<td>不常用，但可用于定价逻辑</td>
+</tr>
+<tr>
+<td><strong>换手率</strong></td>
+<td>交易量/流通股</td>
+<td>流动性评估、“热度”判断</td>
+</tr>
+</tbody>
+</table>
+<p>已经能读取到最关键的量化基础数据，这就是绝大部分初级策略的基础。</p>
+<h3 id="✅-三、这些数据未来怎么用？">✅ <strong>三、这些数据未来怎么用？</strong></h3>
+<p>刚完成的是量化最基础的一步：<strong>获取并理解行情数据</strong>。接下来，这些数据会被用于：</p>
+<hr>
+<p><strong>① 构建技术指标（MA、EMA、RSI、MACD 等）</strong></p>
+<p>例如：</p>
+<ul>
+<li>MA10 = 收盘价的10日均线</li>
+<li>RSI = 计算超买/超卖</li>
+<li>MACD = 趋势</li>
+</ul>
+<p>所有指标都需要收盘价、成交量。</p>
+<hr>
+<p><strong>② 策略信号计算</strong></p>
+<p>比如：</p>
+<ul>
+<li>MA5 上穿 MA20 → 做多信号</li>
+<li>RSI &lt; 30 → 可能反转</li>
+<li>连续3天涨幅为负 → 机会</li>
+</ul>
+<p>这些信号全部依赖你刚刚的 DataFrame。</p>
+<hr>
+<p><strong>③ 回测（Backtesting）</strong></p>
+<p>你将用这些数据：</p>
+<ul>
+<li>根据信号“模拟买卖”</li>
+<li>用开盘价成交（中国 A 股 T+1）</li>
+<li>记录收益曲线</li>
+</ul>
+<hr>
+<p><strong>④ 可视化分析（绘制K线、走势）</strong></p>
+<p>你刚开始使用 matplotlib，这个非常好。</p>
+<p>下一步你可以绘制：</p>
+<ul>
+<li>收盘价曲线</li>
+<li>均线叠加</li>
+<li>价格涨跌的柱状图</li>
+</ul>
+<hr>
+<p><strong>⑤ 多股票数据组合（多因子、选股策略）</strong></p>
+<p>未来你会扩展到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">symbols = [<span class="string">&quot;000001&quot;</span>, <span class="string">&quot;000002&quot;</span>, <span class="string">&quot;600519&quot;</span>, <span class="string">&quot;000300&quot;</span>]</span><br></pre></td></tr></table></figure>
+<p>自动循环获取所有股票数据，用于：</p>
+<ul>
+<li>横截面动量</li>
+<li>高频因子</li>
+<li>alpha 仓位管理</li>
+</ul>
+<p>🟦 1. <strong>横截面动量（Cross-sectional Momentum）</strong></p>
+<p>✅ <strong>一句话解释</strong> 同一时点，比较一堆股票，看谁“比较强”（涨得更好），就买强者、卖弱者。</p>
+<p>📌 举例 现在有 5 只股票：</p>
+<table>
+<thead>
+<tr>
+<th>股票</th>
+<th>最近3个月涨幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>+20%</td>
+</tr>
+<tr>
+<td>B</td>
+<td>+15%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>+5%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>-2%</td>
+</tr>
+<tr>
+<td>E</td>
+<td>-10%</td>
+</tr>
+</tbody>
+</table>
+<p>横截面动量做的事就是：</p>
+<ul>
+<li>选涨幅排名 <strong>前 20%</strong>：买 A、B</li>
+<li>躲避或做空 <strong>后 20%</strong>：卖 D、E</li>
+</ul>
+<p>📌 为什么叫“横截面”（cross-sectional）？</p>
+<p>因为不是看一个股票的时间序列，而是：</p>
+<p>👉 <strong>同一天，横切市场，把股票相互比较谁强谁弱。</strong></p>
+<p>📌 在量化中的用途</p>
+<ul>
+<li>最经典的选股因子之一</li>
+<li>可以构建“强者恒强”策略</li>
+<li>ETF 也能用（比较行业 ETF 的强弱）</li>
+</ul>
+<p>📌 你未来会这样写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;return_3m&#x27;</span>] = df[<span class="string">&#x27;close&#x27;</span>].pct_change(<span class="number">60</span>)</span><br><span class="line">top = df.sort_values(<span class="string">&#x27;return_3m&#x27;</span>).tail(<span class="number">50</span>)   <span class="comment"># 买最强 50 只</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>🟦 2. <strong>高频因子（High-frequency Factor）</strong></p>
+<p>这个词听起来很“高端”，但核心思想很简单。</p>
+<p>✅ <strong>一句话解释</strong></p>
+<p>利用<strong>分钟级</strong>（甚至秒级）数据提取的“微观价格行为特征”，来捕捉短期机会。</p>
+<p>📌 举例：秒级或分钟数据</p>
+<p>一只股票的价格每 1 分钟变化如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">10:00  10.01</span><br><span class="line">10:01  10.05</span><br><span class="line">10:02  10.06</span><br><span class="line">10:03  10.02</span><br><span class="line">10:04  10.03</span><br></pre></td></tr></table></figure>
+<p>你可以从这些数据构造因子，例如：</p>
+<ul>
+<li><strong>短期价格动量</strong>：近 3 分钟是不是持续上涨？</li>
+<li><strong>量价关系</strong>：成交量突然放大是否预示着突破？</li>
+<li><strong>反转因子</strong>：价格连续快速下跌后是否马上反弹？</li>
+</ul>
+<p>📌 高频因子有什么特点？</p>
+<ul>
+<li>用的数据频次高（tick、1分钟线、5分钟线）。</li>
+<li>信号反应更快。</li>
+<li>但需要更好的执行环境（实盘才需要）。</li>
+<li>回测也更复杂。</li>
+</ul>
+<p>📌 你以后用 akshare 也可以获取分钟级数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = ak.stock_zh_a_minute(symbol=<span class="string">&quot;000001&quot;</span>, period=<span class="string">&quot;1&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>这就是高频策略的数据基础。</p>
+<hr>
+<p>🟦 3. <strong>alpha 仓位管理（Alpha Portfolio / Alpha Weighting）</strong></p>
+<p>这是量化投资的核心思想之一。</p>
+<p>✅ <strong>一句话解释</strong></p>
+<p>你从各个因子（动量、价值、波动率等）得到“预期收益预测”（alpha），<br>
+然后根据这些预测决定每只股票的<strong>仓位（权重）</strong>。</p>
+<hr>
+<h3 id="📌-举例">📌 举例</h3>
+<p>你现在有三个因子：</p>
+<table>
+<thead>
+<tr>
+<th>股票</th>
+<th>因子1动量</th>
+<th>因子2价值</th>
+<th>因子3波动率</th>
+<th>综合 alpha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0.8</td>
+<td>0.3</td>
+<td>0.2</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>B</td>
+<td>-0.3</td>
+<td>0.5</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.2</td>
+<td>-0.1</td>
+<td>-0.5</td>
+<td>-0.2</td>
+</tr>
+</tbody>
+</table>
+<p>alpha 数字越大，未来涨的概率越高。</p>
+<p>📌 如何变成仓位？</p>
+<p>常见方法：</p>
+<ol>
+<li>
+<p><strong>按比例分配</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weight = alpha / sum(alpha+)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>买前20% alpha，卖后20% alpha</strong></p>
+</li>
+<li>
+<p><strong>目标波动率分配（风险平价）</strong></p>
+</li>
+</ol>
+<p>📌 alpha 仓位管理的意义</p>
+<ul>
+<li>你不再“凭感觉买股票”</li>
+<li>而是<strong>让数学告诉你该买多少、卖多少</strong></li>
+<li>多因子策略就是这样组合出来的</li>
+</ul>
+<p>你未来会这样写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">weights = alphas / alphas.<span class="built_in">sum</span>()</span><br><span class="line">portfolio_return = (weights * next_day_returns).<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
+<hr>
+<p>🟦 4. 三者关系总结（你能立刻理解）</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>做的事</th>
+<th>数据需求</th>
+<th>在量化中的位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>横截面动量</strong></td>
+<td>比较股票强弱，买强卖弱</td>
+<td>日线</td>
+<td>因子之一</td>
+</tr>
+<tr>
+<td><strong>高频因子</strong></td>
+<td>分钟级数据挖模型特征</td>
+<td>Tick/分钟线</td>
+<td>高频策略核心</td>
+</tr>
+<tr>
+<td><strong>Alpha 仓位管理</strong></td>
+<td>根据因子得分决定买多少</td>
+<td>因子结果</td>
+<td>组合构建</td>
+</tr>
+</tbody>
+</table>
+<p>一句话串起来：</p>
+<p>👉 你先用“横截面动量”“高频因子”等产生 alpha，然后用 alpha 仓位管理生成实际的投资组合。</p>
+<h1>🟣 任务 C：画图</h1>
+<p>🟣 你的图是否正确？</p>
+<p><img src="./quant_day_1/image-20251114154319929.png" alt="image-20251114154319929"></p>
+<p>是的，<strong>完全正确</strong>。</p>
+<ul>
+<li>横轴是交易日序号（0 到约 200）</li>
+<li>纵轴是价格（11 元到 13.2 元之间）</li>
+<li>标题显示正常</li>
+<li>曲线走势清晰，没有乱码<br>
+这表明你的 pandas、matplotlib、akshare 组合已经能顺利跑通，这是量化学习的核心基本操作。</li>
+</ul>
+<hr>
+<h3 id="🟣-你的图是什么形状？">🟣 你的图是什么形状？</h3>
+<p>从你显示的曲线可以看出：</p>
+<p>👉 <strong>总体是“震荡上升 → 板块泡沫 → 回落”结构。</strong></p>
+<p>更细一点看：</p>
+<ol>
+<li><strong>前期（0–80）缓慢震荡</strong></li>
+</ol>
+<ul>
+<li>价格在 11.0–11.7 区间波动</li>
+<li>没有明显趋势</li>
+<li>属于低波动、横盘结构</li>
+</ul>
+<ol start="2">
+<li><strong>中期（约 80–130）快速上升</strong></li>
+</ol>
+<ul>
+<li>80 之后开始抬升</li>
+<li>在 125 左右达到最高点（约 13.3）</li>
+<li>这是一段明显的 <strong>趋势行情 / 上涨动量段</strong></li>
+</ul>
+<ol start="3">
+<li><strong>后期（130–200）震荡回落</strong></li>
+</ol>
+<ul>
+<li>价格从高位回落到约 11.5–11.3</li>
+<li>呈下行结构</li>
+</ul>
+<p>总体形状像一个“山峰”：<br>
+<strong>慢慢爬坡 → 中间大涨 → 再回落下山。</strong></p>
+<p>这在量化里非常常见，叫：</p>
+<p><strong>“先震荡 → 突破 → 见顶 → 回调”</strong></p>
+<hr>
+<h3 id="🟣-收盘价曲线能告诉我们什么？">🟣 收盘价曲线能告诉我们什么？</h3>
+<ol>
+<li><strong>趋势是否存在</strong></li>
+</ol>
+<p>你看到中间这段明显上涨，这告诉我们：</p>
+<ul>
+<li>均线策略（MA10、MA20）在这段时期会有不错的表现</li>
+<li>动量因子在这一段会捕捉到强势上涨</li>
+</ul>
+<ol start="2">
+<li><strong>波动状态</strong></li>
+</ol>
+<p>前期波动很小 → 可以试探低风险策略<br>
+中期波动变大 → 适合趋势策略<br>
+后期下跌 → 均线策略会自动退出</p>
+<ol start="3">
+<li><strong>关键节点（支撑位和阻力位）</strong></li>
+</ol>
+<p>虽然你现在还不做技术分析，但折线图本身已经告诉你：</p>
+<ul>
+<li>~11 元附近是强支撑（反复回落到这个位置）</li>
+<li>13.3 元附近是阶段高点</li>
+</ul>
+<p>这些都能帮助你理解“为什么策略要用均线/EMA/动量”。</p>
+<hr>
+<p>🟣 下一步任务（任务 D：轻度→中度过渡）</p>
+<p>如果你愿意继续，我建议你做：</p>
+<p>🟢 <strong>任务 D：画出 5 日均线 + 20 日均线（MA5 / MA20）</strong></p>
+<p>通过它你能看到：</p>
+<ul>
+<li>为什么均线能捕捉趋势</li>
+<li>为什么均线金叉/死叉能作为简单策略</li>
+<li>为什么很多策略只依赖收盘价就能赚钱</li>
+</ul>
+<h3 id="🔵-K线图（Candlestick-Chart）">🔵 <strong>K线图（Candlestick Chart）</strong></h3>
+<p>绘制 <strong>K线图（Candlestick Chart）</strong> 是量化里非常基础、非常实用的一步，我会用最简单、最稳定的方式带你完成。</p>
+<p>你现在的 akshare + pandas 环境完全能渲染 K 线图，我们只需要再加一个库：</p>
+<h4 id="🟢-方法一（最推荐）——使用-mplfinance（最简洁、最稳）">🟢 <strong>方法一（最推荐）——使用 mplfinance（最简洁、最稳）</strong></h4>
+<p>这是目前 Python 里画 K 线最干净、最兼容的方式。</p>
+<hr>
+<p>🔧 第一步：安装 mplfinance</p>
+<p>在你的终端或 PyCharm 的 Terminal 输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mplfinance</span><br></pre></td></tr></table></figure>
+<p>或者（如果你在 micromamba 环境里）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mamba install -c conda-forge mplfinance</span><br></pre></td></tr></table></figure>
+<hr>
+<p>🔧 第二步：整理 akshare 数据格式</p>
+<p>mplfinance 需要 <strong>列名是英文</strong>：<code>Open, High, Low, Close, Volume</code><br>
+而 akshare 的列名是中文：<code>开盘, 收盘, 最高, 最低, 成交量</code></p>
+<p>我们需要 <strong>重命名</strong>，这一步很关键。</p>
+<hr>
+<p>🔵 完整代码（复制即可运行）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> akshare <span class="keyword">as</span> ak</span><br><span class="line"><span class="keyword">import</span> mplfinance <span class="keyword">as</span> mpf</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取数据</span></span><br><span class="line">df = ak.stock_zh_a_hist(symbol=<span class="string">&quot;000001&quot;</span>, start_date=<span class="string">&quot;20240101&quot;</span>, end_date=<span class="string">&quot;20241231&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换为 pandas 可识别的格式</span></span><br><span class="line">df = df.rename(columns=&#123;</span><br><span class="line">    <span class="string">&quot;日期&quot;</span>: <span class="string">&quot;Date&quot;</span>,</span><br><span class="line">    <span class="string">&quot;开盘&quot;</span>: <span class="string">&quot;Open&quot;</span>,</span><br><span class="line">    <span class="string">&quot;收盘&quot;</span>: <span class="string">&quot;Close&quot;</span>,</span><br><span class="line">    <span class="string">&quot;最高&quot;</span>: <span class="string">&quot;High&quot;</span>,</span><br><span class="line">    <span class="string">&quot;最低&quot;</span>: <span class="string">&quot;Low&quot;</span>,</span><br><span class="line">    <span class="string">&quot;成交量&quot;</span>: <span class="string">&quot;Volume&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换日期为索引</span></span><br><span class="line">df[<span class="string">&quot;Date&quot;</span>] = pd.to_datetime(df[<span class="string">&quot;Date&quot;</span>])</span><br><span class="line">df = df.set_index(<span class="string">&quot;Date&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 K 线图</span></span><br><span class="line">mpf.plot(</span><br><span class="line">    df,</span><br><span class="line">    <span class="built_in">type</span>=<span class="string">&quot;candle&quot;</span>,           <span class="comment"># 蜡烛图</span></span><br><span class="line">    style=<span class="string">&quot;yahoo&quot;</span>,           <span class="comment"># 美观主题</span></span><br><span class="line">    volume=<span class="literal">True</span>,             <span class="comment"># 显示成交量</span></span><br><span class="line">    title=<span class="string">&quot;000001 K线图&quot;</span>,</span><br><span class="line">    mav=(<span class="number">5</span>, <span class="number">20</span>),             <span class="comment"># 加 5日 &amp; 20日 均线</span></span><br><span class="line">    figsize=(<span class="number">12</span>, <span class="number">6</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>🔍 运行后你会看到什么？</p>
+<p>你会得到一个标准的完整 K 线图：</p>
+<ul>
+<li>红绿色蜡烛（涨绿跌红）</li>
+<li>上下影线</li>
+<li>左边价格轴</li>
+<li>下方成交量柱状图</li>
+<li>上面叠加 5 日、20 日均线</li>
+</ul>
+<p>看起来会像 TradingView 或同花顺那种专业 K线图。</p>
+<hr>
+<p>🧠 小提醒：为什么量化需要 K线？</p>
+<p>虽然量化主要走“收盘价驱动”，但 K 线图仍然帮助你：</p>
+<ul>
+<li>观察趋势结构（阴线、阳线密度）</li>
+<li>观察波动大小（上影线、下影线）</li>
+<li>识别转折（锤子线、吞没形态等）</li>
+<li>看成交量配合（量价关系）</li>
+</ul>
+<p>这对你以后构建策略直觉很重要。</p>
+<hr>
+<p>🟣 如果你愿意继续加深——我可以给你：</p>
+<p>✔ 任务 E：绘制带布林带（Bollinger Bands）的 K 线图</p>
+<p>✔ 任务 F：叠加 MACD、RSI 等技术指标</p>
+<p>✔ 任务 G：多股 K 线对比（行业比较）</p>
+<p>✔ 任务 H：做第一份简单的择时策略（均线金叉回测）</p>
+<p>你下一步想做哪一个？</p>
+<p>Hanz，你问得非常好。<br>
+你现在已经会“画”K线，而接下来理解 <strong>K线的原理</strong>，意味着你开始掌握“金融图形背后的数学和交易逻辑”。这一步很关键，会让你以后读图、做策略都更扎实。</p>
+<p>我会用<strong>专业但好理解、清晰、务实</strong>的方式，完整讲清楚 K 线图背后的机制和意义。</p>
+<hr>
+<h4 id="🟦-K线图的核心原理：用四个价格描述一整天（或一段时间）的全部市场行为">🟦 <strong>K线图的核心原理：用四个价格描述一整天（或一段时间）的全部市场行为</strong></h4>
+<p>K 线图之所以存在，是因为 <strong>“一条价格曲线不足以描述市场的真实波动”</strong>。</p>
+<p>单纯看收盘价，只能看到每天一个点；<br>
+但市场一天之中：</p>
+<ul>
+<li>开盘价</li>
+<li>曾经涨到哪里（最高）</li>
+<li>曾经跌到哪里（最低）</li>
+<li>收在哪儿（收盘）</li>
+</ul>
+<p>这些信息非常关键：</p>
+<p>👉 <strong>四个价格 together 才能展现市场的“情绪、力量、争斗”。</strong></p>
+<p>因此 K 线用这四个要素来总结整个周期：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+<th>描述市场行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>开盘价（Open）</strong></td>
+<td>第一笔成交价</td>
+<td>市场当天的起点、短期预期</td>
+</tr>
+<tr>
+<td><strong>收盘价（Close）</strong></td>
+<td>最后一笔成交价</td>
+<td>情绪的终点、主力力量的结果</td>
+</tr>
+<tr>
+<td><strong>最高价（High）</strong></td>
+<td>当天的最高成交价</td>
+<td>买方力量能把价格推多高</td>
+</tr>
+<tr>
+<td><strong>最低价（Low）</strong></td>
+<td>当天的最低成交价</td>
+<td>卖方力量能把价格压多低</td>
+</tr>
+</tbody>
+</table>
+<p>K线的核心就是一句话：</p>
+<blockquote>
+<p><strong>用一个“蜡烛”记录市场在这一段时间内的博弈结果。</strong></p>
+</blockquote>
+<hr>
+<p>🟦 <strong>K 线的组成原理：实体 + 上下影线</strong></p>
+<p>一根K线包含两部分：</p>
+<hr>
+<p>① 实体（Body）</p>
+<p>🌕 阳线（Close &gt; Open）</p>
+<p>表示收盘价高于开盘价，即：</p>
+<p>👉 <strong>这段时间市场“涨”为主，买方力量更强。</strong></p>
+<p>🌑 阴线（Close &lt; Open）</p>
+<p>表示收盘价低于开盘价：</p>
+<p>👉 <strong>这段时间市场“跌”为主，卖方力量占优。</strong></p>
+<p>涨跌颜色：</p>
+<ul>
+<li>国内 → 习惯：红涨绿跌</li>
+<li>国外 → 绿涨红跌</li>
+</ul>
+<p>颜色无关原理，只是“方便看”。</p>
+<hr>
+<p>② 影线（Shadows）</p>
+<ul>
+<li><strong>上影线 = 高点 - 最大（开、收）</strong></li>
+<li><strong>下影线 = 最小（开、收） - 低点</strong></li>
+</ul>
+<p>影线告诉我们：</p>
+<ul>
+<li>上影线长 → 曾被推高，但卖方强势压回</li>
+<li>下影线长 → 曾急跌，但买方把盘拉回</li>
+</ul>
+<p>影线长度反映<strong>波动 + 力量对比</strong>。</p>
+<hr>
+<p>🟦 <strong>K 线图为何能比折线图更“真实”？</strong></p>
+<p>折线图只记录每日收盘价：</p>
+<ul>
+<li>看不到日内冲高回落</li>
+<li>看不到早盘找到跳空开盘</li>
+<li>看不到下影线抢筹</li>
+<li>看不到长上影压力</li>
+</ul>
+<p>而 K 线图能呈现：</p>
+<ul>
+<li>多空力量变化</li>
+<li>市场情绪波动</li>
+<li>关键价位冲击</li>
+<li>支撑与压力</li>
+<li>转折信号（针形线、吞没、十字星等）</li>
+</ul>
+<p>换句话说：</p>
+<p>👉 <strong>折线图 = 结果<br>
+👉 K 线图 = 整个过程</strong></p>
+<p>量化虽然最后依赖“数字”，但图形是帮助理解市场结构的重要工具。</p>
+<hr>
+<p>🟦 <strong>为什么 K 线图是全球股票交易最常用的图表？</strong></p>
+<p>因为它同时表现：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>折线图</th>
+<th>K线图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>展示收盘价</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>展示开盘价</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>展示最高/最低</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>展示波动范围</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>展示买卖力量</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>展示市场心理</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+<p>因此：</p>
+<blockquote>
+<p><strong>K线图几乎是唯一能“把市场行为图像化”的工具。</strong></p>
+</blockquote>
+<p>这也是为什么世界所有交易系统（TradingView、彭博、Wind）默认都是 K线。</p>
+<hr>
+<p>🟦 <strong>你现在理解的 K线图原理将直接帮助你做策略</strong></p>
+<p>比如接下来你会看到：</p>
+<p>✔ 均线系统（MA5 / MA20）</p>
+<p>K线告诉你何时趋势变强、何时疲软。</p>
+<p>✔ 布林带（Bollinger Bands）</p>
+<p>K线的波动范围结合均线生成区间。</p>
+<p>✔ K线形态信号</p>
+<ul>
+<li>下影线长 → 抄底资金</li>
+<li>上影线长 → 压力明显</li>
+<li>十字星 → 多空僵持</li>
+<li>吞没形态 → 强烈转势</li>
+</ul>
+<p>✔ 动量策略</p>
+<p>K线告诉你趋势是否连续、波动是否放大。</p>
+<p>✔ 支撑位 / 阻力位</p>
+<p>影线触碰的位置往往变成未来的支撑/压力。</p>
+<p>你以后会慢慢发现：</p>
+<p>👉 <strong>理解 K线 = 理解市场的内部结构<br>
+👉 理解市场结构 = 做策略的基础</strong></p>
+<hr>
+<p>🟩 如果你愿意，我可以带你继续深入</p>
+<p>你可以告诉我你想继续哪一项：</p>
+<p>① <strong>K线形态讲解（十字星、锤子线、吞没）——超实用、直觉增强</strong></p>
+<p>② <strong>在 K 线上叠加均线（MA5/MA20）并解释交叉信号</strong></p>
+<p>③ <strong>布林带 + K线图（非常直觉的策略）</strong></p>
+<p>④ <strong>MACD、RSI 技术指标和 K 线配合</strong></p>
+<p>⑤ <strong>写你的第一个 K 线策略：均线金叉自动回测</strong></p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/homepage-main-deploy/2025/11/12/quant_1/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">量化志</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/homepage-main-deploy/2025/10/29/diary_12/"><span class="level-item">写点</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/homepage-main-deploy/">Hanz</a><p class="is-size-7"><span>&copy; 2025 Hanz Shadow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">用💖发电</p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/homepage-main-deploy/js/column.js"></script><!--!--><script data-pjax src="/homepage-main-deploy/js/main.js" defer></script><!--!--></body></html>

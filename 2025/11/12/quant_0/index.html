@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>量化志 - Hanz</title><link rel="manifest" href="/homepage-main-deploy/manifest.json"><meta name="application-name" content="Hanz"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hanz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="小白入门-基础图谱"><meta property="og:type" content="article"><meta property="og:title" content="量化志"><meta property="og:url" content="https://hashadow.github.io/2025/11/12/quant_0/"><meta property="og:site_name" content="Hanz"><meta property="og:description" content="小白入门-基础图谱"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><meta property="article:published_time" content="2025-11-12T16:00:00.000Z"><meta property="article:modified_time" content="2025-12-26T08:10:23.042Z"><meta property="article:author" content="Hanz Shadow"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hashadow.github.io/2025/11/12/quant_0/"},"headline":"量化志","image":["https://hashadow.github.io/homepage-main-deploy/img/og_image.png"],"datePublished":"2025-11-12T16:00:00.000Z","dateModified":"2025-12-26T08:10:23.042Z","author":{"@type":"Person","name":"Hanz Shadow"},"publisher":{"@type":"Organization","name":"Hanz","logo":{"@type":"ImageObject","url":{"text":"Hanz"}}},"description":"小白入门-基础图谱"}</script><link rel="canonical" href="https://hashadow.github.io/2025/11/12/quant_0/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/homepage-main-deploy/css/default.css"><!--!--><script>
+                 window.MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                    },
+                    svg: { fontCache: 'global' }
+                };
+                </script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/homepage-main-deploy/">Hanz</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/homepage-main-deploy/">Home</a><a class="navbar-item" href="/homepage-main-deploy/wiki/">知识库</a><a class="navbar-item" href="/homepage-main-deploy/wiki/physics/">物理</a><a class="navbar-item" href="/homepage-main-deploy/wiki/cs/">计算机</a><a class="navbar-item" href="/homepage-main-deploy/teaching">教学</a><a class="navbar-item" href="/homepage-main-deploy/plan">计划</a><a class="navbar-item" href="/homepage-main-deploy/shopping">购物</a><a class="navbar-item" href="/homepage-main-deploy/about">关于</a></div><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-11-12T16:00:00.000Z" title="11/12/2025, 4:00:00 PM">2025-11-13</time>发表</span><span class="level-item"><time dateTime="2025-12-26T08:10:23.042Z" title="12/26/2025, 8:10:23 AM">2025-12-26</time>更新</span><span class="level-item">8 分钟读完 (大约1166个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">量化志</h1><div class="content"><h1>概念</h1>
+<h3 id="折现">折现</h3>
+<p><strong>折现是将未来现金流在通胀、风险溢价和机会成本等因素的影响下，换算成当期价值的过程。若折现后的总现值大于当前投资成本，则净现值（NPV）为正，投资能够创造额外收益。</strong></p>
+<p><strong>核心功能</strong>：把未来的金额换算成今天的等价值，形成可比较的标准。未来的钱价值更低，因为包含三种因素：</p>
+<ol>
+<li>通胀（Purchasing Power）：未来购买力下降</li>
+<li>风险溢价（Risk Premium）：未来不确定，需要补偿风险</li>
+<li>机会成本（Opportunity Cost）：今天的钱可以用于其他可能赚钱的用途</li>
+</ol>
+<p><strong>本质</strong>：统一不同时间点的价值尺度，让投资、估值、收益比较变得可行。折现就是把未来的钱拉回当下，同时考虑通胀、风险和机会成本。如果折现后的价值比今天花出去的钱大，那就是赚的。</p>
+<h4 id="应用">应用</h4>
+<p>五个关键金融场景：</p>
+<p><strong>① 项目投资 – 判断是否值得做（NPV）</strong> 一个项目会在未来 10 年产出现金。折现把未来的现金流拉回“今天的价值”，如果大于成本 → 值得投资。</p>
+<p><strong>② 公司估值（DCF 公司估值模型）</strong> 所有上市公司估值几乎都靠折现法（DCF）。一个公司未来 10 年赚多少钱 → 折现 → 得出它今天的价值。做股票时会用到。</p>
+<p>③ <strong>债券定价（Bond Pricing）</strong> 未来的每期利息也要折现。折现后的价值和当前市场价比对，判断贵还是便宜。</p>
+<p>④ <strong>股票估值（股息折现模型 DDM）</strong> 未来股息 → 折现 → 当前价值。</p>
+<p>⑤ <strong>量化策略 – 计算收益的真实价值</strong> 比如策略回测中的：年化收益率、夏普比率、真实收益都要经过折现逻辑来理解“时间价值”。</p>
+<h3 id="计算">计算</h3>
+<p>🌟 一、折现“使用哪一个比率”？——三大主流标准（实际应用）</p>
+<p><strong>① 无风险利率（Risk-Free Rate）</strong></p>
+<p>适用场景：国债定价、折现未来的“确定收益”（如银行存款）、做基准比较（CAPM 的基础）</p>
+<p>一般取值：中国：10 年期国债收益率；美国：10 年期 Treasury Yield</p>
+<p>例如（假设）： <strong>3% / 年</strong></p>
+<p>作用：只是把<strong>时间价值和通胀</strong>考虑进去。</p>
+<hr>
+<p><strong>② 公司折现率（WACC）</strong></p>
+<p>适用场景：公司估值（DCF 模型）、项目投资决策（NPV）、并购、融资评估</p>
+<p>WACC 包含：借钱的成本（债务成本）、融资成本（股权成本）、权重（资产结构）；一般企业 WACC 可能是：<strong>8% ~ 15% / 年</strong></p>
+<p>折现率越高 → 未来越不值钱 → 项目越难通过；折现率越低 → 更容易通过项目</p>
+<hr>
+<p><strong>③ CAPM 模型算出来的“股权成本”</strong>（最常用于股票）</p>
+<p>CAPM：<strong>股权成本 = 无风险利率 + β ×（市场风险溢价）</strong></p>
+<p>例子：无风险利率 = 3%，β = 1.2，市场风险溢价 = 6%，股权成本 = 3% + 1.2 × 6% = <strong>3% + 7.2%= 10.2%</strong></p>
+<p>适用场景：折现股票未来的现金流、做股票估值、做项目的股东回报要求</p>
+<hr>
+<p>🌟 二、那折现“如何带入数据”？——三个最常用核心公式：</p>
+<p><strong>① 单笔未来现金折现</strong></p>
+<p>未来一年后得到 FV：$PV = \frac{FV}{(1+r)}$ ；三年后：$PV = \frac{FV}{(1+r)^3}$</p>
+<p><strong>② 多期现金流折现（DCF）</strong> $PV = \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}$，这是股票估值和项目投资最核心的公式。</p>
+<p><strong>③ 净现值（NPV）</strong> $NPV = PV - 投资成本$ ，NPV &gt; 0：赚 ；NPV &lt; 0：亏</p>
+<h4 id="折现率的选择与折现计算示例">折现率的选择与折现计算示例</h4>
+<h5 id="1-折现率来源">1. 折现率来源</h5>
+<p>1.1 无风险利率（Risk-Free Rate）：通常选择10年期国债收益率</p>
+<p>1.2 WACC（加权平均资本成本）：用于公司估值、项目投资</p>
+<p>1.3 CAPM（股权成本）：$r = R_f + β × MRP$</p>
+<h5 id="2-单期与多期折现公式">2. 单期与多期折现公式</h5>
+<p>$PV = FV / (1+r)^t$ ; $NPV = Σ CF_t / (1+r)^t − 初始投资$</p>
+<h5 id="3-实际例子：项目投资折现">3. 实际例子：项目投资折现</h5>
+<p>投资成本：100 万 ；折现率：10%；未来现金流：1年：50 万；2年：60 万  3年：70 万</p>
+<p>折现：</p>
+<ul>
+<li>$50 / 1.1 = 45.45$</li>
+<li>$60 / 1.1^2 = 49.59$</li>
+<li>$70 / 1.1^3 = 52.57$</li>
+</ul>
+<p>总现值 = 147.61 万；NPV = 147.61 − 100 = 47.61 万 → 项目值得做。</p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/homepage-main-deploy/2025/11/13/quant_day_2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">量化志</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/homepage-main-deploy/2025/11/12/quant_1/"><span class="level-item">量化志</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/homepage-main-deploy/">Hanz</a><p class="is-size-7"><span>&copy; 2025 Hanz Shadow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">用💖发电</p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/homepage-main-deploy/js/column.js"></script><!--!--><script data-pjax src="/homepage-main-deploy/js/main.js" defer></script><!--!--></body></html>

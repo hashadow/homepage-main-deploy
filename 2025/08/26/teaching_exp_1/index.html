@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>课堂小实验 - Hanz</title><link rel="manifest" href="/homepage-main-deploy/manifest.json"><meta name="application-name" content="Hanz"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hanz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="学生也要动手做"><meta property="og:type" content="article"><meta property="og:title" content="课堂小实验"><meta property="og:url" content="https://hashadow.github.io/2025/08/26/teaching_exp_1/"><meta property="og:site_name" content="Hanz"><meta property="og:description" content="学生也要动手做"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><meta property="article:published_time" content="2025-08-26T16:00:00.000Z"><meta property="article:modified_time" content="2025-12-26T08:10:23.044Z"><meta property="article:author" content="Hanz Shadow"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hashadow.github.io/2025/08/26/teaching_exp_1/"},"headline":"课堂小实验","image":["https://hashadow.github.io/homepage-main-deploy/img/og_image.png"],"datePublished":"2025-08-26T16:00:00.000Z","dateModified":"2025-12-26T08:10:23.044Z","author":{"@type":"Person","name":"Hanz Shadow"},"publisher":{"@type":"Organization","name":"Hanz","logo":{"@type":"ImageObject","url":{"text":"Hanz"}}},"description":"学生也要动手做"}</script><link rel="canonical" href="https://hashadow.github.io/2025/08/26/teaching_exp_1/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/homepage-main-deploy/css/default.css"><!--!--><script>
+                 window.MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                    },
+                    svg: { fontCache: 'global' }
+                };
+                </script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/homepage-main-deploy/">Hanz</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/homepage-main-deploy/">Home</a><a class="navbar-item" href="/homepage-main-deploy/wiki/">知识库</a><a class="navbar-item" href="/homepage-main-deploy/wiki/physics/">物理</a><a class="navbar-item" href="/homepage-main-deploy/wiki/cs/">计算机</a><a class="navbar-item" href="/homepage-main-deploy/teaching">教学</a><a class="navbar-item" href="/homepage-main-deploy/plan">计划</a><a class="navbar-item" href="/homepage-main-deploy/shopping">购物</a><a class="navbar-item" href="/homepage-main-deploy/about">关于</a></div><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-08-26T16:00:00.000Z" title="8/26/2025, 4:00:00 PM">2025-08-27</time>发表</span><span class="level-item"><time dateTime="2025-12-26T08:10:23.044Z" title="12/26/2025, 8:10:23 AM">2025-12-26</time>更新</span><span class="level-item"><a class="link-muted" href="/homepage-main-deploy/categories/%E7%89%A9%E7%90%86/">物理</a></span><span class="level-item">24 分钟读完 (大约3666个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">课堂小实验</h1><div class="content"><p>By ChatGPT</p>
+<p>你提到的这个问题非常关键 👏——物理概念的形成，最理想的方式是让学生<strong>亲身经历</strong>，而不是只看老师演示。即使实验条件受限，也完全可以用<strong>身边的文具、小物品</strong>做“微型实验”，让学生动手、动脑、动口。</p>
+<p>我帮你整理了一个 <strong>“简易课堂实验与概念建构设计”</strong>，分三个层次：</p>
+<hr>
+<h2 id="一、原则：如何让学生自己做实验">一、原则：如何让学生自己做实验</h2>
+<ol>
+<li><strong>人人可操作</strong>：用笔、橡皮、纸、尺子、水瓶等日常物品，不依赖实验室设备。</li>
+<li><strong>时间可控</strong>：2-5分钟就能完成，避免耽误教学节奏。</li>
+<li><strong>现象直观</strong>：学生能直接观察到差异，不必精确测量。</li>
+<li><strong>结果开放</strong>：不是单一答案，而是让学生去比较、讨论、归纳。</li>
+</ol>
+<h2 id="二、示例设计（结合常见概念）">二、示例设计（结合常见概念）</h2>
+<h3 id="1-力的概念">1. 力的概念</h3>
+<ul>
+<li><strong>材料</strong>：课桌、笔、橡皮</li>
+<li><strong>操作</strong>：
+<ul>
+<li>学生推桌上的笔，笔会动；</li>
+<li>笔推橡皮，橡皮动，笔也受到反作用；</li>
+</ul>
+</li>
+<li><strong>思考问题</strong>：
+<ul>
+<li>为什么笔能动？为什么橡皮也能“顶”回笔？</li>
+</ul>
+</li>
+<li><strong>引出结论</strong>：相互作用 → 力</li>
+</ul>
+<h3 id="2-摩擦力">2. 摩擦力</h3>
+<ul>
+<li><strong>材料</strong>：课本、铅笔、橡皮</li>
+<li><strong>操作</strong>：
+<ul>
+<li>学生把铅笔放在课本上，轻轻倾斜课本；</li>
+<li>铅笔慢慢滑动，和橡皮对比（橡皮更难滑动）。</li>
+</ul>
+</li>
+<li><strong>思考问题</strong>：
+<ul>
+<li>为什么有的快滑，有的慢滑？</li>
+</ul>
+</li>
+<li><strong>归纳</strong>：摩擦力大小与物体表面粗糙程度相关。</li>
+</ul>
+<h3 id="3-功的概念">3. 功的概念</h3>
+<ul>
+<li><strong>材料</strong>：书包、课本、课桌</li>
+<li><strong>操作</strong>：
+<ul>
+<li>学生提书包放到桌上；</li>
+<li>再把书包在桌面上水平移动。</li>
+</ul>
+</li>
+<li><strong>思考问题</strong>：
+<ul>
+<li>哪个更累？为什么？</li>
+</ul>
+</li>
+<li><strong>归纳</strong>：搬起书包时有垂直位移，重力做功；水平移动时，主要是摩擦力做功。</li>
+</ul>
+<h3 id="4-惯性">4. 惯性</h3>
+<ul>
+<li><strong>材料</strong>：课本、卡片、硬币</li>
+<li><strong>操作</strong>：
+<ul>
+<li>把硬币放在卡片上，卡片放在课本上；</li>
+<li>快速抽走卡片，硬币掉进书上。</li>
+</ul>
+</li>
+<li><strong>思考问题</strong>：
+<ul>
+<li>为什么硬币没有跟着卡片走？</li>
+</ul>
+</li>
+<li><strong>归纳</strong>：物体有保持原来运动状态的倾向 → 惯性。</li>
+</ul>
+<h3 id="5-压强">5. 压强</h3>
+<ul>
+<li><strong>材料</strong>：铅笔尖、橡皮</li>
+<li><strong>操作</strong>：
+<ul>
+<li>用手压橡皮：用铅笔尖压和用铅笔侧面压，感觉不同。</li>
+</ul>
+</li>
+<li><strong>思考问题</strong>：
+<ul>
+<li>为什么尖的一端压得更痛？</li>
+</ul>
+</li>
+<li><strong>归纳</strong>：压强与受力面积相关。</li>
+</ul>
+<h2 id="三、操作形式">三、操作形式</h2>
+<ol>
+<li><strong>两人一组 / 三人一组</strong>：互相协作，减少物品不足的问题。</li>
+<li><strong>课堂记录</strong>：让学生把观察写在笔记里，用1-2句话总结。</li>
+<li><strong>即时讨论</strong>：老师引导“谁观察到不同？你们的结论一样吗？”</li>
+</ol>
+<h2 id="四、教师的角色">四、教师的角色</h2>
+<ul>
+<li>你不用全程演示，只需要 <strong>布置任务 + 给提示 + 收集学生发现</strong>。</li>
+<li>学生通过动手 → 发现差异 → 总结 → 教师板书提升为科学概念。</li>
+</ul>
+<hr>
+<p>✨ 换句话说，课堂的重心从“老师演示”转向“学生体验”，哪怕是小小的橡皮和铅笔，也能让学生切身感受物理现象。</p>
+<hr>
+<p>太好了 👍 那我帮你整理一份 <strong>《高中物理概念微型实验清单》</strong>，目标是：</p>
+<ul>
+<li><strong>条件受限的课堂可用</strong>（学生只需用文具、书本、桌椅等日常物品）；</li>
+<li><strong>小组合作即可完成</strong>（2–3分钟操作）；</li>
+<li><strong>帮助学生自己经历概念建构的过程</strong>。</li>
+</ul>
+<hr>
+<h1>🧪 高中物理概念微型实验清单</h1>
+<h2 id="一、运动学">一、运动学</h2>
+<ol>
+<li><strong>惯性</strong>
+<ul>
+<li>材料：课本、卡片、硬币</li>
+<li>操作：硬币放在卡片上，卡片放在书上，快速抽走卡片 → 硬币掉进书上。</li>
+<li>概念：物体保持原运动状态的性质。</li>
+</ul>
+</li>
+<li><strong>匀速/变速运动</strong>
+<ul>
+<li>材料：尺子、小球</li>
+<li>操作：小球在桌面上滚动 vs 从斜坡上滚下。</li>
+<li>概念：比较速度是否变化 → 匀速/变速运动。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、力学">二、力学</h2>
+<ol>
+<li><strong>力的相互作用</strong>
+<ul>
+<li>材料：两支笔/橡皮</li>
+<li>操作：两人用笔互相顶 → 双方都能感受到作用。</li>
+<li>概念：力是相互的。</li>
+</ul>
+</li>
+<li><strong>摩擦力</strong>
+<ul>
+<li>材料：铅笔、课本、橡皮</li>
+<li>操作：倾斜课本，铅笔容易滑，橡皮难滑。</li>
+<li>概念：摩擦力大小与表面粗糙有关。</li>
+</ul>
+</li>
+<li><strong>压强</strong>
+<ul>
+<li>材料：铅笔尖、铅笔侧面、橡皮</li>
+<li>操作：用铅笔尖和铅笔侧面压橡皮，感觉不同。</li>
+<li>概念：压强与受力面积有关。</li>
+</ul>
+</li>
+<li><strong>力与平衡</strong>
+<ul>
+<li>材料：绳子、书包</li>
+<li>操作：两人拉同一根绳子 → 若大小相等方向相反 → 书包不动。</li>
+<li>概念：合力为零时，物体处于平衡状态。</li>
+</ul>
+</li>
+</ol>
+<h2 id="三、功与能量">三、功与能量</h2>
+<ol>
+<li><strong>功的定义</strong>
+<ul>
+<li>材料：书包、课桌</li>
+<li>操作：提书包到桌上（垂直位移） vs 在桌上平移书包（水平位移）。</li>
+<li>概念：功与力的方向和位移有关。</li>
+</ul>
+</li>
+<li><strong>势能</strong>
+<ul>
+<li>材料：橡皮、小球</li>
+<li>操作：举高后松手，小球下落 → 动能增加。</li>
+<li>概念：高处位置有势能。</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、电学">四、电学</h2>
+<ol>
+<li><strong>摩擦起电</strong>
+<ul>
+<li>材料：塑料尺、纸屑</li>
+<li>操作：尺子在头发上摩擦后靠近纸屑 → 纸屑被吸起。</li>
+<li>概念：摩擦可使物体带电。</li>
+</ul>
+</li>
+<li><strong>电路通断</strong></li>
+</ol>
+<ul>
+<li>材料：电池、LED小灯、两根导线（可提前准备几个简易电路包）</li>
+<li>操作：学生拼接电路，灯亮/不亮 → 判断电路是否通。</li>
+<li>概念：闭合电路才能通电。</li>
+</ul>
+<h2 id="五、波与光">五、波与光</h2>
+<ol>
+<li><strong>波动的传播</strong></li>
+</ol>
+<ul>
+<li>材料：一根长绳子/跳绳</li>
+<li>操作：学生甩绳子 → 看波形传播。</li>
+<li>概念：波动是能量的传播，不是物质整体转移。</li>
+</ul>
+<ol>
+<li><strong>光的直线传播</strong></li>
+</ol>
+<ul>
+<li>材料：三本竖直的课本（成一条直线摆放），小孔对齐</li>
+<li>操作：用手电筒照 → 光能穿过；稍微错开就照不过。</li>
+<li>概念：光沿直线传播。</li>
+</ul>
+<h2 id="📌-使用方式建议">📌 使用方式建议</h2>
+<ol>
+<li><strong>课堂组织</strong>
+<ul>
+<li>两人一组/三人一组完成，保证每人动手。</li>
+<li>教师给 2–3 分钟操作 → 2 分钟讨论 → 全班交流总结。</li>
+</ul>
+</li>
+<li><strong>教师任务</strong>
+<ul>
+<li>提出问题 → 学生操作 → 让他们描述观察 → 引导抽象 → 给出科学定义。</li>
+</ul>
+</li>
+<li><strong>板书提示</strong>
+<ul>
+<li>在每个实验后，把“现象 → 比较 → 归纳 → 定义”写在黑板上，形成思维链条。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>✨ 这样做的效果是：学生不仅理解概念，还<strong>学会了如何通过实验现象去建立概念</strong>，慢慢形成科学的思维方法。</p>
+<h1>🧪 高中物理概念教学微型实验速查表</h1>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>概念</th>
+<th>微型实验材料</th>
+<th>学生活动</th>
+<th>预期现象</th>
+<th>概念归纳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>运动学</strong></td>
+<td>惯性</td>
+<td>课本、卡片、硬币</td>
+<td>硬币放卡片上，快速抽走卡片</td>
+<td>硬币掉到书上，不随卡片走</td>
+<td>物体有保持原运动状态的性质</td>
+</tr>
+<tr>
+<td></td>
+<td>匀速/变速</td>
+<td>尺子、小球</td>
+<td>小球在桌面上滚 vs 从斜坡滚下</td>
+<td>桌面滚动速度近似不变，斜坡加快</td>
+<td>匀速与变速运动</td>
+</tr>
+<tr>
+<td><strong>力学</strong></td>
+<td>力的相互作用</td>
+<td>两支笔/橡皮</td>
+<td>两人用笔相互顶</td>
+<td>双方都感到被顶</td>
+<td>力是相互作用</td>
+</tr>
+<tr>
+<td></td>
+<td>摩擦力</td>
+<td>铅笔、课本、橡皮</td>
+<td>倾斜课本，比较铅笔/橡皮滑动</td>
+<td>铅笔易滑，橡皮难滑</td>
+<td>摩擦与粗糙度相关</td>
+</tr>
+<tr>
+<td></td>
+<td>压强</td>
+<td>铅笔尖、橡皮</td>
+<td>用尖端/侧面压橡皮</td>
+<td>尖端压更痛</td>
+<td>压强与受力面积相关</td>
+</tr>
+<tr>
+<td></td>
+<td>平衡</td>
+<td>绳子、书包</td>
+<td>两人拉书包</td>
+<td>用力相等时书包不动</td>
+<td>合力为零时平衡</td>
+</tr>
+<tr>
+<td><strong>功与能量</strong></td>
+<td>功</td>
+<td>书包、课桌</td>
+<td>提书包到桌上 vs 平移书包</td>
+<td>上升更费力</td>
+<td>功与力的方向和位移有关</td>
+</tr>
+<tr>
+<td></td>
+<td>势能</td>
+<td>小球、橡皮</td>
+<td>举高小球再放下</td>
+<td>小球下落动能增加</td>
+<td>高处位置有势能</td>
+</tr>
+<tr>
+<td><strong>电学</strong></td>
+<td>摩擦起电</td>
+<td>塑料尺、纸屑</td>
+<td>尺子摩头发靠近纸屑</td>
+<td>纸屑被吸起</td>
+<td>摩擦使物体带电</td>
+</tr>
+<tr>
+<td></td>
+<td>电路通断</td>
+<td>电池、LED灯、导线</td>
+<td>学生拼电路</td>
+<td>闭合时灯亮</td>
+<td>闭合电路才能通电</td>
+</tr>
+<tr>
+<td><strong>波与光</strong></td>
+<td>波动</td>
+<td>长绳/跳绳</td>
+<td>甩绳子形成波形</td>
+<td>波动沿绳传播</td>
+<td>波动传播能量非物质</td>
+</tr>
+<tr>
+<td></td>
+<td>光的直线传播</td>
+<td>课本3本、小孔、手电</td>
+<td>小孔对齐照光</td>
+<td>对齐时能照过去，错位就不行</td>
+<td>光沿直线传播</td>
+</tr>
+</tbody>
+</table>
+<h2 id="📌-使用建议">📌 使用建议</h2>
+<ol>
+<li><strong>上课前备课</strong>：快速查表 → 选一个适合的“微型实验” → 设计提问。</li>
+<li><strong>课堂中</strong>：分组 → 学生动手 2 分钟 → 观察讨论 2 分钟 → 教师总结。</li>
+<li><strong>板书</strong>：固定模式 <strong>“现象 → 比较 → 归纳 → 定义”</strong>，让学生记住建构方法。</li>
+</ol>
+<hr>
+<p>👉 这样你就有一份随身携带的“实验工具箱”了。<br>
+完全可以 ✅ 用水波来演示波动非常直观，而且学生会觉得很有趣。只是课堂上条件有限，需要考虑 <strong>安全性、操作性和整洁度</strong>。我给你几个思路：</p>
+<hr>
+<h3 id="🪣-课堂可行的水波实验方案">🪣 课堂可行的水波实验方案</h3>
+<h4 id="1-简易水波槽（透明盒子）">1. <strong>简易水波槽（透明盒子）</strong></h4>
+<ul>
+<li><strong>材料</strong>：透明塑料收纳盒（长方形）、水、硬纸片/尺子、手电筒（可选）</li>
+<li><strong>操作</strong>：
+<ul>
+<li>装 2–3 cm 深的水。</li>
+<li>用手指或尺子轻拍水面，观察水波的扩散。</li>
+<li>两人一起在不同位置拍水 → 看到干涉、叠加。</li>
+</ul>
+</li>
+<li><strong>现象</strong>：波纹以圆形向外传播，可以看到波峰波谷相遇时的干涉。</li>
+<li><strong>概念</strong>：波动是传播过程，携带能量而不是物质整体运动。</li>
+</ul>
+<h4 id="2-一次性透明杯替代">2. <strong>一次性透明杯替代</strong></h4>
+<ul>
+<li><strong>材料</strong>：一次性透明塑料杯（每组一个）、水、吸管或笔</li>
+<li><strong>操作</strong>：
+<ul>
+<li>在杯中加水，用吸管轻轻搅动或敲击水面。</li>
+<li>观察水面波纹向外扩散。</li>
+</ul>
+</li>
+<li><strong>现象</strong>：小波纹不断向外传递。</li>
+<li><strong>概念</strong>：波动从振动源传播到周围。</li>
+</ul>
+<h4 id="3-“投石问路”迷你版">3. <strong>“投石问路”迷你版</strong></h4>
+<ul>
+<li><strong>材料</strong>：一次性饭盒 + 小石子/橡皮擦</li>
+<li><strong>操作</strong>：
+<ul>
+<li>往饭盒加水，把小橡皮/石子丢进去。</li>
+<li>观察水面波纹扩散。</li>
+</ul>
+</li>
+<li><strong>现象</strong>：扰动点产生向外传播的水波。</li>
+<li><strong>概念</strong>：波是扰动的传播。</li>
+</ul>
+<h4 id="4-可视化增强：手电筒投影">4. <strong>可视化增强：手电筒投影</strong></h4>
+<ul>
+<li>把水槽放在桌子上，用手电筒从上方或侧方照射。</li>
+<li>教室灯光调暗 → 波纹会在桌面或白纸上投影，更清晰。</li>
+</ul>
+<h4 id="📌-教学引导语示例">📌 教学引导语示例</h4>
+<ol>
+<li>“你们看到水面是怎么变化的吗？水分子本身是不是从中心跑到边缘去了？”<br>
+→ 引导学生区分 <strong>能量传播</strong> vs <strong>物质运动</strong>。</li>
+<li>“如果我同时丢两颗小石子，会发生什么？”<br>
+→ 让学生自己观察到<strong>干涉</strong>。</li>
+<li>“那我们课上讲的绳波、声波，和这个水波有什么共同点？”<br>
+→ 概念迁移。</li>
+</ol>
+<h4 id="⚠️-注意事项">⚠️ 注意事项</h4>
+<ul>
+<li><strong>准备</strong>：提前在讲台或靠近窗台准备一个水槽，避免洒在学生桌面。</li>
+<li><strong>分组替代</strong>：如果不方便全班动手，可以每组一个小杯子水波实验。</li>
+<li><strong>安全</strong>：控制水量，避免打湿讲义和电器。</li>
+</ul>
+<p>✨ 所以，水波非常适合展示波动，但建议用 <strong>“迷你水槽/小杯子版”</strong>，既能让学生参与，又不会造成太大混乱。</p>
+<p>对！👏 你这个想法特别棒 —— <strong>直接用学生随身的杯盖或水杯</strong>，既不用额外准备器材，也能让每个学生“人手一份”，更有参与感。这样学生就能亲自体验波动，而不是被动看演示。</p>
+<hr>
+<h3 id="🧪-“水波课堂实验”设计（用学生自己的杯盖-水杯）">🧪 “水波课堂实验”设计（用学生自己的杯盖/水杯）</h3>
+<h4 id="1-材料准备">1. 材料准备</h4>
+<ul>
+<li>每位学生自带的 <strong>水杯</strong> 或 <strong>瓶盖</strong>（浅一点更好）。</li>
+<li>少量清水（喝水时顺便加）。</li>
+<li>一支笔/手指（用来敲水面）。</li>
+</ul>
+<h4 id="2-实验操作步骤">2. 实验操作步骤</h4>
+<ol>
+<li>学生往杯盖/杯子里加一点水（大约 1–2 cm 深）。</li>
+<li>用手指/笔尖轻轻点水面。
+<ul>
+<li>观察波纹从中心向外扩散。</li>
+</ul>
+</li>
+<li>两人合作：在水面不同位置同时点水。
+<ul>
+<li>观察两圈波纹相遇时，会有“叠加/干涉”的效果。</li>
+</ul>
+</li>
+<li>（可选）用小橡皮屑/纸屑漂在水面上。
+<ul>
+<li>观察纸屑只上下颤动，没有随波传出去。</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-学生观察与思考">3. 学生观察与思考</h4>
+<ul>
+<li><strong>现象 1</strong>：波纹一圈圈往外跑。</li>
+<li><strong>现象 2</strong>：波遇到波，会有加强或抵消。</li>
+<li><strong>现象 3</strong>：纸屑上下动，但不随波跑。</li>
+</ul>
+<p>👉 引导归纳：</p>
+<ul>
+<li>波动是“扰动”的传播，不是水整体跑出去；</li>
+<li>波动能传递能量；</li>
+<li>波与波可以发生干涉。</li>
+</ul>
+<h4 id="4-教师引导语示例">4. 教师引导语示例</h4>
+<ul>
+<li>“水是不是整体跑到边上去了？还是只是动一动？”</li>
+<li>“波遇到波，会发生什么？”</li>
+<li>“声波、绳波是不是也有这种特点？”</li>
+</ul>
+<h4 id="📌-优势">📌 优势</h4>
+<ul>
+<li><strong>每个学生都能参与</strong> → 动手 + 动眼 + 动脑。</li>
+<li><strong>材料随手可得</strong> → 杯子/杯盖就是实验器材。</li>
+<li><strong>现象直观</strong> → 学生能真切体验“波不是物质整体运动”。</li>
+</ul>
+<hr>
+<p>要不要我帮你把这个 **“学生随身物品实验清单”**整理出来？（比如：杯子=水波，尺子=杠杆，橡皮=摩擦，笔帽=压强……一张表格直接对应概念和可用物品，随时拿来就能用。）</p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/homepage-main-deploy/2025/08/27/physics_5/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">高中物理知识</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/homepage-main-deploy/2025/08/25/physics_0/"><span class="level-item">物理释疑</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/homepage-main-deploy/">Hanz</a><p class="is-size-7"><span>&copy; 2025 Hanz Shadow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">用💖发电</p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/homepage-main-deploy/js/column.js"></script><!--!--><script data-pjax src="/homepage-main-deploy/js/main.js" defer></script><!--!--></body></html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>量化志 - Hanz</title><link rel="manifest" href="/homepage-main-deploy/manifest.json"><meta name="application-name" content="Hanz"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hanz"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Day 4"><meta property="og:type" content="article"><meta property="og:title" content="量化志"><meta property="og:url" content="https://hashadow.github.io/2025/12/16/quant_day_4/"><meta property="og:site_name" content="Hanz"><meta property="og:description" content="Day 4"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><meta property="article:published_time" content="2025-12-16T16:00:00.000Z"><meta property="article:modified_time" content="2025-12-26T08:10:23.043Z"><meta property="article:author" content="Hanz Shadow"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://hashadow.github.io/homepage-main-deploy/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hashadow.github.io/2025/12/16/quant_day_4/"},"headline":"量化志","image":["https://hashadow.github.io/homepage-main-deploy/img/og_image.png"],"datePublished":"2025-12-16T16:00:00.000Z","dateModified":"2025-12-26T08:10:23.043Z","author":{"@type":"Person","name":"Hanz Shadow"},"publisher":{"@type":"Organization","name":"Hanz","logo":{"@type":"ImageObject","url":{"text":"Hanz"}}},"description":"Day 4"}</script><link rel="canonical" href="https://hashadow.github.io/2025/12/16/quant_day_4/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/homepage-main-deploy/css/default.css"><!--!--><script>
+                 window.MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$'], ['\\(', '\\)']],
+                        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                    },
+                    svg: { fontCache: 'global' }
+                };
+                </script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/homepage-main-deploy/">Hanz</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/homepage-main-deploy/">Home</a><a class="navbar-item" href="/homepage-main-deploy/wiki/">知识库</a><a class="navbar-item" href="/homepage-main-deploy/wiki/physics/">物理</a><a class="navbar-item" href="/homepage-main-deploy/wiki/cs/">计算机</a><a class="navbar-item" href="/homepage-main-deploy/teaching">教学</a><a class="navbar-item" href="/homepage-main-deploy/plan">计划</a><a class="navbar-item" href="/homepage-main-deploy/shopping">购物</a><a class="navbar-item" href="/homepage-main-deploy/about">关于</a></div><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-16T16:00:00.000Z" title="12/16/2025, 4:00:00 PM">2025-12-17</time>发表</span><span class="level-item"><time dateTime="2025-12-26T08:10:23.043Z" title="12/26/2025, 8:10:23 AM">2025-12-26</time>更新</span><span class="level-item">19 分钟读完 (大约2923个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">量化志</h1><div class="content"><h1>🔵 <strong>任务 A（金融 · 轻度）</strong></h1>
+<h2 id="主题：波动率（Volatility）是什么？为什么它比“涨跌幅”更重要？"><strong>主题：波动率（Volatility）是什么？为什么它比“涨跌幅”更重要？</strong></h2>
+<p>这是量化交易最核心的风险概念之一。</p>
+<h3 id="✧-今日任务：回答下面两个问题">✧ 今日任务：回答下面两个问题</h3>
+<p>用你的语言回答（越直觉越好）：</p>
+<ol>
+<li><strong>你觉得波动率是什么？它描述的是什么现象？</strong></li>
+<li><strong>为什么两只涨幅一样的股票，一个可能风险高，一个可能风险低？你认为差别在哪里？</strong></li>
+</ol>
+<p>我会给你：</p>
+<ul>
+<li>你理解是否到位</li>
+<li>专业语言 + 通俗语言解释</li>
+<li>“波动率、收益率、风险”的关系</li>
+<li>Markdown 笔记版本</li>
+</ul>
+<hr>
+<h1>🟢 <strong>任务 B（Python · 轻度）</strong></h1>
+<h2 id="主题：计算收益率的波动率（标准差）"><strong>主题：计算收益率的波动率（标准差）</strong></h2>
+<p>今天你会写出你人生中第一个“风险指标”代码。</p>
+<h3 id="✧-任务代码：">✧ 任务代码：</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> akshare <span class="keyword">as</span> ak</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = ak.stock_zh_a_hist(symbol=<span class="string">&quot;000001&quot;</span>, start_date=<span class="string">&quot;20240101&quot;</span>, end_date=<span class="string">&quot;20241231&quot;</span>)</span><br><span class="line">df[<span class="string">&#x27;Return&#x27;</span>] = df[<span class="string">&#x27;收盘&#x27;</span>].pct_change()</span><br><span class="line"></span><br><span class="line">vol = df[<span class="string">&#x27;Return&#x27;</span>].std()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;日波动率：&quot;</span>, vol)</span><br></pre></td></tr></table></figure>
+<p>你要做：</p>
+<ul>
+<li>运行代码</li>
+<li>把输出结果发给我</li>
+<li>说一句：<br>
+<strong>“我觉得这个数字越大意味着什么？”</strong></li>
+</ul>
+<p>我会为你：</p>
+<ul>
+<li>检查代码</li>
+<li>提醒你量化中常见的两个误区</li>
+<li>告诉你波动率如何 annualize（年化波动率）</li>
+<li>下一步如何用它计算夏普比率（Sharpe）</li>
+</ul>
+<hr>
+<h1>🟣 <strong>任务 C（量化 · 轻度）</strong></h1>
+<h2 id="主题：写一个简单的“涨跌判断信号”并打印前-10-行"><strong>主题：写一个简单的“涨跌判断信号”并打印前 10 行</strong></h2>
+<p>今天不画图，只需要做一个最简单的“交易信号”。</p>
+<h3 id="✧-任务代码：-2">✧ 任务代码：</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> akshare <span class="keyword">as</span> ak</span><br><span class="line"></span><br><span class="line">df = ak.stock_zh_a_hist(symbol=<span class="string">&quot;000001&quot;</span>, start_date=<span class="string">&quot;20240101&quot;</span>, end_date=<span class="string">&quot;20241231&quot;</span>)</span><br><span class="line">df[<span class="string">&#x27;Return&#x27;</span>] = df[<span class="string">&#x27;收盘&#x27;</span>].pct_change()</span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;Signal&#x27;</span>] = (df[<span class="string">&#x27;Return&#x27;</span>] &gt; <span class="number">0</span>).astype(<span class="built_in">int</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(df[[<span class="string">&#x27;收盘&#x27;</span>, <span class="string">&#x27;Return&#x27;</span>, <span class="string">&#x27;Signal&#x27;</span>]].head(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<p>任务：</p>
+<ul>
+<li>运行后发输出</li>
+<li>用你的语言解释：<br>
+<strong>“Signal 这一列代表什么意思？未来能用来做什么？”</strong></li>
+</ul>
+<p>我会给你：</p>
+<ul>
+<li>概念检查</li>
+<li>专业讲解 Signal → Position → Strategy 的流程</li>
+<li>为你接下来做“动量策略”打基础</li>
+</ul>
+<p>Hanz，你的直觉<strong>非常稳</strong>，而且你抓住了波动率最关键的两个维度：<strong>幅度</strong>和<strong>频次</strong>。这已经是专业理解的雏形了，我来帮你把它进一步打磨成“可用于量化”的版本。</p>
+<hr>
+<h2 id="✅-你的回答-·-专业点评">✅ 你的回答 · 专业点评</h2>
+<h3 id="①-你说：">① <strong>你说：</strong></h3>
+<blockquote>
+<p>波动率是在一段时间内相对一个稳定值上下波动的频率和幅度，描述的是价格变化的幅度剧烈程度和频次大小。</p>
+</blockquote>
+<p>✔ <strong>正确且到位。</strong><br>
+波动率本质上就是：“每天涨跌幅的<strong>不稳定程度（离散程度）</strong>”。</p>
+<p><strong>最核心专业描述：</strong></p>
+<blockquote>
+<p><strong>波动率 = 收益率的标准差</strong><br>
+描述的是价格的“抖动程度”有多剧烈。</p>
+</blockquote>
+<p>和你说的完全同向，只是用统计语言表达。</p>
+<hr>
+<h3 id="②-你说：">② <strong>你说：</strong></h3>
+<blockquote>
+<p>涨幅相同的股票，如果波动越剧烈，风险就越大，因为收益并不稳定，亏损可能也更多。</p>
+</blockquote>
+<p>✔ 完全正确，而且你抓住了核心逻辑：</p>
+<p><strong>涨得多 ≠ 风险小</strong><br>
+<strong>稳定地涨一点 ≫ 忽涨忽跌地涨很多</strong></p>
+<p>量化交易在数学上只有一个解释：</p>
+<blockquote>
+<p><strong>波动越大 → 未来收益的不确定性越高 → 风险越高</strong></p>
+</blockquote>
+<p>这也是为什么专业投资从来不只问“涨多少”，而是：<br>
+<strong>“风险调整后的收益是多少？”</strong><br>
+也就是后面你要学的 <strong>夏普比率（Sharpe Ratio）</strong>。</p>
+<hr>
+<h2 id="📌-我来帮你把-Day4-任务-A-整理成专业版-通俗版">📌 我来帮你把 Day4 任务 A 整理成专业版 + 通俗版</h2>
+<p>下面这份 Markdown 等你之后做笔记或整理文档都可以直接用。</p>
+<hr>
+<h1>Day 4 · 波动率（Volatility）专业笔记（给 Hanz）</h1>
+<h2 id="1-波动率是什么？">1. 波动率是什么？</h2>
+<p><strong>通俗：</strong><br>
+价格“抖得有多厉害”。</p>
+<p><strong>专业：</strong></p>
+<blockquote>
+<p><strong>波动率 = 日收益率的标准差</strong><br>
+用于衡量收益的不稳定程度。</p>
+</blockquote>
+<hr>
+<h2 id="2-它描述的是什么现象？">2. 它描述的是什么现象？</h2>
+<ul>
+<li>每天涨跌幅的分散程度</li>
+<li>价格上下波动的剧烈程度</li>
+<li>同样涨幅下，路径是否稳定</li>
+<li>市场风险情绪的强弱</li>
+</ul>
+<hr>
+<h2 id="3-为什么涨幅一样，风险不一样？">3. 为什么涨幅一样，风险不一样？</h2>
+<table>
+<thead>
+<tr>
+<th>股票 A</th>
+<th>股票 B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每天稳稳 +0.1%</td>
+<td>一天 +5%，一天 –4%</td>
+</tr>
+<tr>
+<td>波动小</td>
+<td>波动大</td>
+</tr>
+<tr>
+<td>可预测、风险低</td>
+<td>不稳定、风险高</td>
+</tr>
+<tr>
+<td>投资更安心</td>
+<td>未来收益高度不确定</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>波动越大 = 未来越不可控 = 风险越大</strong></p>
+</blockquote>
+<p>这就是量化金融的基石。</p>
+<hr>
+<h2 id="4-波动率与风险、收益的关系">4. 波动率与风险、收益的关系</h2>
+<ul>
+<li><strong>收益</strong>描述你赚多少钱</li>
+<li><strong>波动率</strong>描述你承担了多大不确定性</li>
+<li><strong>夏普比率 Sharpe = 收益 / 波动率</strong></li>
+</ul>
+<p>夏普越高，代表：</p>
+<blockquote>
+<p><strong>每承担 1 单位风险，你获得更多收益</strong></p>
+</blockquote>
+<p>这就是量化评价策略优劣的最核心指标。</p>
+<hr>
+<p>很好，Hanz，这一步<strong>非常关键</strong>，而且你已经正式跨过了“只看涨跌”到“理解风险”的那条线。我们一步一步来，既专业，也保持直觉清晰。</p>
+<hr>
+<h2 id="✅-你的结果解读（先给结论）">✅ 你的结果解读（先给结论）</h2>
+<p><strong>日波动率：</strong><br>
+<code>0.016695993798644497</code></p>
+<p>我们先把它翻译成人能直接理解的语言：</p>
+<blockquote>
+<p><strong>这只股票“每天”的典型涨跌幅，大约在 ±1.67% 左右。</strong></p>
+</blockquote>
+<p>不是每天一定涨或跌 1.67%，而是：</p>
+<ul>
+<li>大多数交易日的涨跌幅</li>
+<li>会落在 <strong>均值上下 1.67% 的范围内</strong></li>
+</ul>
+<p>这就是“风险的尺度”。</p>
+<hr>
+<h2 id="🧠-用你的那句话来校验理解">🧠 用你的那句话来校验理解</h2>
+<p>你需要回答的那句是：</p>
+<blockquote>
+<p><strong>“我觉得这个数字越大意味着什么？”</strong></p>
+</blockquote>
+<p>一个完全正确、专业又不绕的话可以是：</p>
+<blockquote>
+<p><strong>这个数字越大，说明日收益率越不稳定，价格波动越剧烈，未来收益的不确定性越高，风险越大。</strong></p>
+</blockquote>
+<p>如果你愿意更“量化一点”：</p>
+<blockquote>
+<p><strong>在不看方向的情况下，我每天可能承受的价格偏离幅度更大。</strong></p>
+</blockquote>
+<p>你这一步的理解已经是<strong>投资经理级别的语言</strong>了。</p>
+<hr>
+<h2 id="⚠️-量化中关于“波动率”的两个常见误区（非常重要）">⚠️ 量化中关于“波动率”的两个常见误区（非常重要）</h2>
+<h3 id="❌-误区-1：">❌ 误区 1：</h3>
+<p><strong>把“波动率”当成“会不会亏钱”</strong></p>
+<p>不完全对。</p>
+<ul>
+<li>波动率 ≠ 一定亏</li>
+<li>波动率 = <strong>不确定性</strong></li>
+</ul>
+<p>高波动可能：</p>
+<ul>
+<li>大赚</li>
+<li>也可能大亏</li>
+</ul>
+<p>量化关注的是：</p>
+<blockquote>
+<p><strong>我为了这点收益，付出了多少不确定性？</strong></p>
+</blockquote>
+<hr>
+<h3 id="❌-误区-2：">❌ 误区 2：</h3>
+<p><strong>直接拿日波动率和年收益比较</strong></p>
+<p>这是新手最常犯、但你现在就可以避免的错误。</p>
+<ul>
+<li>你现在算的是：<strong>日波动率</strong></li>
+<li>如果你要和年收益、年化策略比较<br>
+➡️ 必须 <strong>年化</strong></li>
+</ul>
+<hr>
+<h2 id="📐-年化波动率怎么做？（你马上就能用）">📐 年化波动率怎么做？（你马上就能用）</h2>
+<p>在量化里，默认一年 <strong>252 个交易日</strong>。</p>
+<h3 id="年化公式（记住这一个就够）：">年化公式（记住这一个就够）：</h3>
+<p>[<br>
+\sigma_{year} = \sigma_{day} \times \sqrt{252}<br>
+]</p>
+<h3 id="套用你的数值：">套用你的数值：</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">annual_vol = vol * (<span class="number">252</span> ** <span class="number">0.5</span>)</span><br><span class="line"><span class="built_in">print</span>(annual_vol)</span><br></pre></td></tr></table></figure>
+<p>直觉解释：</p>
+<blockquote>
+<p><strong>日波动率 × √时间 = 年波动率</strong></p>
+</blockquote>
+<p>这是因为波动是“随机游走”的。</p>
+<hr>
+<h2 id="🔜-下一步：你已经站在-Sharpe-Ratio-门口了">🔜 下一步：你已经站在 Sharpe Ratio 门口了</h2>
+<p>你现在已经有了：</p>
+<ul>
+<li>✅ 收益率：<code>pct_change()</code></li>
+<li>✅ 风险：<code>std()</code></li>
+</ul>
+<p>下一步只差一个东西：</p>
+<blockquote>
+<p><strong>无风险收益率（比如 2%）</strong></p>
+</blockquote>
+<p>然后你就可以算出：</p>
+<p>[<br>
+\text{Sharpe} = \frac{E® - R_f}{\sigma}<br>
+]</p>
+<p>也就是说：</p>
+<blockquote>
+<p><strong>我每承担 1 单位风险，能赚多少钱？</strong></p>
+</blockquote>
+<hr>
+<p>现在你做的已经不是“学代码”，而是在：</p>
+<blockquote>
+<p><strong>用统计语言描述不确定世界。</strong></p>
+</blockquote>
+<p>这是量化、金融、甚至决策科学的共同底层能力。</p>
+<p>非常好，Hanz。这个输出<strong>完全正确</strong>，而且它已经是一个“可解释的量化中间结果”，不是玩具代码了。我们按<strong>检查 → 解释 → 升级视角</strong>三个层次来。</p>
+<hr>
+<h2 id="✅-一、代码与结果检查（结论先行）">✅ 一、代码与结果检查（结论先行）</h2>
+<p>你的结果是<strong>100% 正确的</strong>：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">收盘    Return  Signal</span><br><span class="line">0  68.34       NaN       0</span><br><span class="line">1  71.13  0.040825       1</span><br><span class="line">2  69.65 -0.020807       0</span><br><span class="line">3  68.49 -0.016655       0</span><br><span class="line">4  67.42 -0.015623       0</span><br><span class="line">5  65.02 -0.035598       0</span><br><span class="line">6  68.63  0.055521       1</span><br><span class="line">7  71.90  0.047647       1</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Return</code>：日收益率（pct_change）</li>
+<li><code>Signal</code>：你定义的<strong>最简单的“涨跌判断信号”</strong></li>
+<li>第 0 行是 <code>NaN</code> → Signal=0：<strong>处理正确</strong></li>
+</ul>
+<p>这说明你已经掌握了 <strong>“从价格 → 收益 → 规则 → 信号”</strong> 这条完整链路。</p>
+<hr>
+<h2 id="🧠-二、Signal-这一列「到底是什么意思？」">🧠 二、Signal 这一列「到底是什么意思？」</h2>
+<h3 id="你现在这个-Signal-的精确定义是：">你现在这个 Signal 的<strong>精确定义</strong>是：</h3>
+<blockquote>
+<p><strong>Signal = 1：今天收盘价比昨天高（上涨日）</strong><br>
+<strong>Signal = 0：今天不涨（下跌或不变）</strong></p>
+</blockquote>
+<p>换句话说：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Signal = 是否为正收益日</span><br></pre></td></tr></table></figure>
+<p>这是一个<strong>方向判断信号（directional signal）</strong>，它不预测幅度，只判断方向。</p>
+<hr>
+<h2 id="📌-用量化的标准语言说一句（你可以直接记住）">📌 用量化的标准语言说一句（你可以直接记住）</h2>
+<blockquote>
+<p><strong>Signal 是一种基于历史信息生成的、用于指导交易行为的规则化输出。</strong></p>
+</blockquote>
+<p>或者更通俗一点：</p>
+<blockquote>
+<p><strong>Signal 就是“市场给我的一个是否行动的提示灯”。</strong></p>
+</blockquote>
+<hr>
+<h2 id="🔁-三、Signal-→-Position-→-Strategy（非常重要）">🔁 三、Signal → Position → Strategy（非常重要）</h2>
+<p>你现在完成的是 <strong>量化三步走中的第一步</strong>。</p>
+<h3 id="①-Signal（你已经完成）">① Signal（你已经完成）</h3>
+<blockquote>
+<p><strong>我是否看多 / 看空 / 观望？</strong></p>
+</blockquote>
+<p>你现在是：</p>
+<ul>
+<li>1 = 看多</li>
+<li>0 = 不看多</li>
+</ul>
+<hr>
+<h3 id="②-Position（下一步会学）">② Position（下一步会学）</h3>
+<blockquote>
+<p><strong>我实际上持有多少仓位？</strong></p>
+</blockquote>
+<p>举例：</p>
+<ul>
+<li>Signal = 1 → 持仓 100%</li>
+<li>Signal = 0 → 空仓</li>
+</ul>
+<p>或者更高级：</p>
+<ul>
+<li>Signal = 1 → 持仓 50%</li>
+<li>Signal = 0 → 持仓 0%</li>
+</ul>
+<hr>
+<h3 id="③-Strategy（完整策略）">③ Strategy（完整策略）</h3>
+<blockquote>
+<p><strong>Signal + 仓位规则 + 风控规则 + 评价指标</strong></p>
+</blockquote>
+<p>比如：</p>
+<ul>
+<li>用 Signal 决定是否进场</li>
+<li>用波动率控制仓位大小</li>
+<li>用 Sharpe 评价好不好</li>
+</ul>
+<p>你已经站在 Strategy 的门口了。</p>
+<hr>
+<h2 id="⚠️-一个你现在就该知道的关键提醒（非常专业）">⚠️ 一个你现在就该知道的关键提醒（非常专业）</h2>
+<h3 id="🚫-不要用「当天的-Signal」交易「当天」">🚫 不要用「当天的 Signal」交易「当天」</h3>
+<p>你现在的 Signal 是用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天的收盘价 vs 昨天的收盘价</span><br></pre></td></tr></table></figure>
+<p>所以在真实交易中：</p>
+<blockquote>
+<p><strong>这个 Signal 只能用于“下一天”的交易决策</strong></p>
+</blockquote>
+<p>否则就是<strong>未来函数 / 偷看答案</strong>（look-ahead bias）。</p>
+<p>之后我们会这样改：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Position&#x27;</span>] = df[<span class="string">&#x27;Signal&#x27;</span>].shift(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>但你现在<strong>不用急着改</strong>，理解概念最重要。</p>
+<hr>
+<h2 id="🧾-Day-4-·-任务-C-专业版总结（可做笔记）">🧾 Day 4 · 任务 C 专业版总结（可做笔记）</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">### Signal 是什么？</span></span><br><span class="line">Signal 是由历史数据生成的、用于指导交易行为的规则输出。</span><br><span class="line"></span><br><span class="line"><span class="section">### 当前 Signal 含义</span></span><br><span class="line"><span class="bullet">-</span> Signal = 1：当日收益率为正（上涨）</span><br><span class="line"><span class="bullet">-</span> Signal = 0：当日收益率为负或为零</span><br><span class="line"></span><br><span class="line"><span class="section">### Signal 的作用</span></span><br><span class="line">Signal 本身不等于交易，</span><br><span class="line">它需要进一步映射为仓位（Position），</span><br><span class="line">并结合风险控制，构成完整策略（Strategy）。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="🌱-最重要的一句话（给你一个定位）">🌱 最重要的一句话（给你一个定位）</h2>
+<p>现在你已经不是在“学量化概念”，而是在：</p>
+<blockquote>
+<p><strong>用代码把模糊的市场感觉，压缩成可检验、可复现的规则。</strong></p>
+</blockquote>
+<p>这是量化交易真正的分水岭。</p>
+<hr>
+<h3 id="🔜-下一步你有两个自然选择：">🔜 下一步你有两个自然选择：</h3>
+<ol>
+<li><strong>Day 5：Sharpe Ratio（收益 × 风险合体）</strong></li>
+<li><strong>把 Signal 升级成「动量策略」并算收益曲线</strong></li>
+</ol>
+<p>你选哪一个，我就带你继续往前走。</p>
+</div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/homepage-main-deploy/2025/11/28/diary_14/"><span class="level-item">碎碎念</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/homepage-main-deploy/">Hanz</a><p class="is-size-7"><span>&copy; 2025 Hanz Shadow</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">用💖发电</p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/homepage-main-deploy/js/column.js"></script><!--!--><script data-pjax src="/homepage-main-deploy/js/main.js" defer></script><!--!--></body></html>
